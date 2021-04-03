@@ -6,7 +6,7 @@ import re
 bot = telebot.TeleBot(config.token)
 
 keyboard1 = telebot.types.ReplyKeyboardMarkup(True, True)
-keyboard1.row('Привет', 'Пока', 'я тебя люблю', 'отправь картинку')
+keyboard1.row('Привет', 'Пока', 'хех', 'отправь картинку')
 
 # отправка картинки
 def send_img(message):
@@ -33,7 +33,7 @@ def send_text(message):
         send_inline_murkup(message)
     elif message.text.lower() == 'пока':
         bot.send_message(message.chat.id, 'Прощай, создатель')
-    elif message.text.lower() == 'я тебя люблю':
+    elif message.text.lower() == 'хех':
         bot.send_sticker(message.chat.id, 'CAACAgIAAxkBAAEBE0RgYyKvsRyRvQFLX0lso3v8n3Ap3gACPQADJHFiGmptpaX1U366HgQ', reply_markup=keyboard1)
     elif message.text.lower() == 'отправь картинку':
         send_img(message=message)
